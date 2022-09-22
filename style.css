@@ -1,6 +1,105 @@
-body {
+body,
+p {
   margin: 0;
   padding: 0;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #408000;
+  }
+  50% {
+    background-color: #40800030;
+  }
+  100% {
+    background-color: #408000;
+  }
+}
+
+.board {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.score {
+  width: 190px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.score_string span:first-child {
+  margin-right: 5px;
+}
+
+.score_best{
+  display: none;
+}
+.score_best__active {
+  display: inline;
+}
+
+.field {
   font-size: 10px;
-  background-color: #fefefe;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #555;
+}
+
+.cell {
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  border: 1px dotted #11111180;
+}
+
+.cell__snake {
+  background-color: #00aa00;
+  border-radius: 30%;
+}
+
+.cell__food {
+  background-color: #ff0000;
+  border-radius: 50%;
+}
+
+.snake-fail {
+  animation: blink 0.5s infinite;
+}
+
+.game-over {
+  width: 30%;
+  padding: 20px;
+  background-color: #555;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.game-over__active {
+  display: flex;
+}
+
+.game-over p {
+  font-size: 1.6em;
+}
+
+.btn-reset {
+  font-size: 1em;
+  margin-top: 20px;
+  padding: 0.5em 1em;
 }

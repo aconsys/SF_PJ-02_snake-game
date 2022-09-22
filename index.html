@@ -6,30 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snake Game</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="field">
-    <div class="cell" data-xy="0, 0"></div>
-    <div class="cell" data-xy="0, 1"></div>
-    <div class="cell" data-xy="0, 2"></div>
-    <div class="cell" data-xy="1, 0"></div>
-    <div class="cell" data-xy="1, 1"></div>
-    <div class="cell" data-xy="1, 2"></div>
-    <div class="cell" data-xy="2, 0"></div>
-    <div class="cell" data-xy="2, 1"></div>
-    <div class="cell" data-xy="2, 2"></div>
-
-    <div class="cell" data-xy="0, 0"></div>
-    <div class="cell" data-xy="0, 1"></div>
-    <div class="cell" data-xy="0, 2"></div>
-    <div class="cell" data-xy="1, 0"></div>
-    <div class="cell" data-xy="1, 1"></div>
-    <div class="cell" data-xy="1, 2"></div>
-    <div class="cell" data-xy="2, 0"></div>
-    <div class="cell" data-xy="2, 1"></div>
-    <div class="cell" data-xy="2, 2"></div>
+  <div class="board">
+    <div class="score">
+      <p class="score_string">
+        <span>Score:</span><span id="score-current-value">0</span>
+      </p>
+      <p class="score_string score_best">
+        <span>Best:</span><span id="score-best-value">0</span>
+      </p>
+    </div>
+    <div class="field"></div>
   </div>
+  <div class="game-over">
+    <p>Game over</p>
+    <button class="btn-reset">Try again</button>
+  </div>
+
   <script src="./script.js"></script>
 </body>
 </html>
